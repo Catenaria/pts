@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Des:</strong>
+  <%= @ficha.des %>
+</p>
+
+<p>
+  <strong>Pv:</strong>
+  <%= @ficha.pv %>
+</p>
+
+<p>
+  <strong>Modelo 3d:</strong>
+  <%= @ficha.model3d %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_ficha_path(@ficha) %> |
+<%= link_to 'Back', fichas_path %>

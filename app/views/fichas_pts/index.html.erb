@@ -1,0 +1,27 @@
+<h1>Listing fichas_pts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ficha</th>
+      <th>Pt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fichas_pts.each do |fichas_pt| %>
+      <tr>
+        <td><%= fichas_pt.ficha_id %></td>
+        <td><%= fichas_pt.pt_id %></td>
+        <td><%= link_to 'Show', fichas_pt %></td>
+        <td><%= link_to 'Edit', edit_fichas_pt_path(fichas_pt) %></td>
+        <td><%= link_to 'Destroy', fichas_pt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fichas pt', new_fichas_pt_path %>

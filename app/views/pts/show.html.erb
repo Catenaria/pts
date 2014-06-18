@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Des:</strong>
+  <%= @pt.des %>
+</p>
+
+<% if @pt.fichas %>
+<div id="models">
+  <% @pt.fichas.each do |ficha| %>
+  <p>
+    <%= ficha.des %>
+    :
+    <%= ficha.pv %>
+  </p>
+    <%= content_tag :div, class:"model", id:"model"+ficha.id.to_s, 'data-fid' => "model"+ficha.id.to_s, 'data-model3d' => ficha.model3d do %>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
+
+<div id="models2"></div>
+
+<%= link_to 'Edit', edit_pt_path(@pt) %> |
+<%= link_to 'Back', pts_path %>
