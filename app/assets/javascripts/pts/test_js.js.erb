@@ -9,13 +9,16 @@ function draw_model(modelFile,divId) {
 
       // Create the scene and set the scene size.
       scene = new THREE.Scene();
-      var WIDTH = window.innerWidth,
-          HEIGHT = window.innerHeight;
-
+      //var WIDTH = window.innerWidth,
+      //    HEIGHT = window.innerHeight;
+      var cont1=document.getElementById(divId);
+      var WIDTH = cont1.offsetWidth,
+          HEIGHT = cont1.offsetHeight;
+      console.log(WIDTH, HEIGHT);
       // Create a renderer and add it to the DOM.
       renderer = new THREE.WebGLRenderer({antialias:true});
       renderer.setSize(WIDTH, HEIGHT);
-      var cont1=document.getElementById(divId);
+
       cont1.appendChild(renderer.domElement);
 
       // Create a camera, zoom it out from the model a bit, and add it to the scene.
@@ -25,15 +28,15 @@ function draw_model(modelFile,divId) {
 
       // Create an event listener that resizes the renderer with the browser window.
       window.addEventListener('resize', function() {
-        var WIDTH = window.innerWidth,
-            HEIGHT = window.innerHeight;
+        var WIDTH = cont1.offsetWidth,
+            HEIGHT = cont1.offsetHeight;
         renderer.setSize(WIDTH, HEIGHT);
         camera.aspect = WIDTH / HEIGHT;
         camera.updateProjectionMatrix();
       });
 
       // Set the background color of the scene.
-      renderer.setClearColor(0xffffff, 1);
+      renderer.setClearColor(0xfafafa, 1);
 
       // Create a light, set its position, and add it to the scene.
       var light = new THREE.PointLight(0xffffff);
@@ -82,11 +85,20 @@ function draw_model(modelFile,divId) {
 }
 
 $('document').ready(function() {
+  function makeModel(modelDiv) {
+    var model3d = modelDiv.data('model3d');
+    var fid = modelDiv.data('fid');
+    draw_model(model3d,fid);
+  };
+
   if($('#models').length){
     $(".model").each(function() {
       var model3d = $(this).data('model3d');
       var fid = $(this).data('fid');
       draw_model(model3d,fid);
     })
+    //$(".model").click(function() {
+    //        makeModel($(this))
+    //    });
   };
 });

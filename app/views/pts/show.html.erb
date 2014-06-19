@@ -1,25 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Des:</strong>
-  <%= @pt.des %>
-</p>
+
+<h1>
+    <%= @pt.des %>
+</h1>
+
 
 <% if @pt.fichas %>
-<div id="models">
+<div id="models" class="container">
+  <% n = 0 %>
   <% @pt.fichas.each do |ficha| %>
-  <p>
-    <%= ficha.des %>
-    :
-    <%= ficha.pv %>
-  </p>
-    <%= content_tag :div, class:"model", id:"model"+ficha.id.to_s, 'data-fid' => "model"+ficha.id.to_s, 'data-model3d' => ficha.model3d do %>
+    <% if n == 0 %>
+    <div class="row">
     <% end %>
+      <% n += 1 %>
+      <div class="col-xs-6 col-sm-4 col-md-2">
+        <strong>
+          <%= ficha.des %>
+        </strong>
+        <%= content_tag :div, class:"model", id:"model"+ficha.id.to_s,
+            "data-toggle" => "modal", "data-target" => "#myModal",
+            'data-fid' => "model"+ficha.id.to_s, 'data-model3d' => ficha.model3d do %>
+        <% end %>
+        Precio: <%= ficha.pv %>
+      </div>
   <% end %>
+  </div>
 </div>
 <% end %>
 
-<div id="models2"></div>
+<!-- Button trigger modal
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>-->
+
+<%= render 'pts/modal_model' %>
 
 <%= link_to 'Edit', edit_pt_path(@pt) %> |
 <%= link_to 'Back', pts_path %>

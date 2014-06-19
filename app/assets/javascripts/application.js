@@ -16,3 +16,5 @@
 //= require_tree .
 //= require three.min
 //= require OrbitControls
+// Loads all Bootstrap javascripts
+//= require bootstrap
