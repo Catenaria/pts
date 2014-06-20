@@ -69,6 +69,6 @@ class PtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pt_params
-      params.require(:pt).permit(:des)
+      params.require(:pt).permit(:des, :imagen_fn, :model3d_fn)
     end
 end

@@ -18,7 +18,8 @@ function draw_model(modelFile,divId) {
       // Create a renderer and add it to the DOM.
       renderer = new THREE.WebGLRenderer({antialias:true});
       renderer.setSize(WIDTH, HEIGHT);
-
+      console.log(HEIGHT);
+      console.log(WIDTH);
       cont1.appendChild(renderer.domElement);
 
       // Create a camera, zoom it out from the model a bit, and add it to the scene.
@@ -60,8 +61,8 @@ function draw_model(modelFile,divId) {
       loader.load( "/models/"+modelFile, function(geometry, materials){
            var material = new THREE.MeshFaceMaterial(materials);
            mesh = new THREE.Mesh(geometry, material);
-           mesh.position.set( 0, 0, 0 );
-           mesh.scale.set( 3, 3, 3 );
+           mesh.position.set( 0, -1, 0 );
+           mesh.scale.set( 4, 4, 4 );
            mesh.overdraw = true;
            scene.add(mesh);
       }, '/images/' );
@@ -84,7 +85,7 @@ function draw_model(modelFile,divId) {
 
 }
 
-$('document').ready(function() {
+window.onload = function() {
   function makeModel(modelDiv) {
     var model3d = modelDiv.data('model3d');
     var fid = modelDiv.data('fid');
@@ -101,4 +102,4 @@ $('document').ready(function() {
     //        makeModel($(this))
     //    });
   };
-});
+};

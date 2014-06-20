@@ -1,10 +1,33 @@
 @import "bootstrap";
 
 
+.navbar-default {
+  background-color: #3f464c;
+  border-color: #e7e7e7;
+}
+
+body {
+ 
+}
+
+input {
+  background-color: #4e575e;
+}
+
 canvas {
  z-index: 998;
 opacity:1;
 background: red;
+}
+
+.foto {
+  background-color: #303030;
+  color: #fafafa;
+  margin: 3px;
+}
+
+a {
+  color: #e30613;
 }
 
 /* Sticky footer styles
@@ -18,6 +41,8 @@ body {
   margin-bottom: 60px;
   font-family: 'Roboto', sans-serif; 
   font-weight: 100; 
+  background-color: #3f464c;
+  color: #fafafb;
 }
 #footer {
   position: absolute;
@@ -27,8 +52,6 @@ body {
   height: 60px;
   background-color: #fafafa;
 }
-
-
 
 /* Custom page CSS
 -------------------------------------------------- */

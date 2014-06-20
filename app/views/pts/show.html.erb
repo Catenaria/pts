@@ -18,10 +18,11 @@
         <strong>
           <%= ficha.des %>
         </strong>
-        <%= content_tag :div, class:"model", id:"model"+ficha.id.to_s,
-            "data-toggle" => "modal", "data-target" => "#myModal",
-            'data-fid' => "model"+ficha.id.to_s, 'data-model3d' => ficha.model3d do %>
-        <% end %>
+        <a href=<%= ficha_path(ficha) %> >
+           <%= content_tag :div, class:"model model-6", id:"model"+ficha.id.to_s,
+               'data-fid' => "model"+ficha.id.to_s, 'data-model3d' => ficha.model3d do %>
+          <% end %>
+             </a>
         Precio: <%= ficha.pv %>
       </div>
   <% end %>

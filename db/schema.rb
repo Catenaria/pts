@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618100559) do
+ActiveRecord::Schema.define(version: 20140620072508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140618100559) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "model3d"
+    t.string   "imagen_fn"
   end
 
   create_table "fichas_pts", force: true do |t|
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(version: 20140618100559) do
     t.string   "des"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "imagen_fn"
+    t.string   "model3d_fn"
   end
 
 end

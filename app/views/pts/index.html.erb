@@ -1,25 +1,29 @@
-<h1>Listing pts</h1>
+<h1>Lista de pts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Des</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+<div id="pts" class="container">
+  <div class="row">
     <% @pts.each do |pt| %>
-      <tr>
-        <td><%= pt.des %></td>
-        <td><%= link_to 'Show', pt %></td>
-        <td><%= link_to 'Edit', edit_pt_path(pt) %></td>
-        <td><%= link_to 'Destroy', pt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="foto col-xs-6 col-sm-4 col-md-2">
+      <%= pt.des %>
+      <%= image_tag "teapots.jpg", class:"img-responsive" %>
+      <%= link_to(pt) do %>
+      <span class="glyphicon glyphicon-info-sign"></span>
+      <% end %>
+      <%= link_to(edit_pt_path(pt)) do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+      <%= link_to(pt, method: :delete, data: { confirm: 'Are you sure?' }) do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <br>
 
 <%= link_to 'New Pt', new_pt_path %>
+
+<br>
