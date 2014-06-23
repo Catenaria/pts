@@ -15,10 +15,12 @@ class PtsController < ApplicationController
   # GET /pts/new
   def new
     @pt = Pt.new
+    @fichas = Ficha.all
   end
 
   # GET /pts/1/edit
   def edit
+    @fichas = Ficha.all
   end
 
   # POST /pts
@@ -69,6 +71,6 @@ class PtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pt_params
-      params.require(:pt).permit(:des, :imagen_fn, :model3d_fn)
+      params.require(:pt).permit(:des, :imagen_fn, :model3d_fn, :ficha_ids => [])
     end
 end

@@ -5,5 +5,9 @@
   </div>
 </div>
 
-<%= link_to 'Show', @pt %> |
-<%= link_to 'Back', pts_path %>
+<%= link_to(@pt) do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+<% end %>
+<%= link_to(pts_path) do %>
+    <span class="glyphicon glyphicon-arrow-left"></span>
+<% end %>

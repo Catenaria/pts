@@ -1,39 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-
-<h1>
-    <%= @pt.des %>
-</h1>
-
-
-<% if @pt.fichas %>
-<div id="models" class="container">
-  <% n = 0 %>
-  <% @pt.fichas.each do |ficha| %>
-    <% if n == 0 %>
-    <div class="row">
-    <% end %>
-      <% n += 1 %>
-      <div class="col-xs-6 col-sm-4 col-md-2">
-        <strong>
-          <%= ficha.des %>
-        </strong>
-        <a href=<%= ficha_path(ficha) %> >
-           <%= content_tag :div, class:"model model-6", id:"model"+ficha.id.to_s,
-               'data-fid' => "model"+ficha.id.to_s, 'data-model3d' => ficha.model3d do %>
-          <% end %>
-             </a>
-        Precio: <%= ficha.pv %>
-      </div>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <%= content_tag :div, class:"fotos model3d", id:"modelPt"+@pt.id.to_s,
+        'data-fid' => "modelPt"+@pt.id.to_s, 'data-model3d' => @pt.model3d_fn do %>
+        <%= image_tag "model_base.jpg", class:"img-responsive foto" %>
+      <% end %>
+    </div>
+    <div class="col-sm-2">
+      <% if @pt.fichas %>
+        <% @pt.fichas.each do |ficha| %>
+        <div class="row fotos">
+          <div class="col-xs-6">
+            <%= image_tag ficha.imagen_fn, class:"img-responsive" %>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to(ficha_path(ficha)) do %>
+            <%= ficha.des %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-<% end %>
 
-<!-- Button trigger modal
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>-->
 
 <%= render 'pts/modal_model' %>
 

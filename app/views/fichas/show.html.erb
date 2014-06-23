@@ -1,17 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @ficha.des %>
-</h1>
-
-
 <div class="row">
   <div class="col-sm-10" id="models">
-    <%= content_tag :div, class:"model model-full", id:"model"+@ficha.id.to_s,
+    <%= content_tag :div, class:"model model3d", id:"model"+@ficha.id.to_s,
         'data-fid' => "model"+@ficha.id.to_s, 'data-model3d' => @ficha.model3d do %>
+      <%= image_tag "model_base.jpg", class:"img-responsive foto" %>
     <% end %>
   </div>
   <div class="col-sm-2">
+    <h1>
+        <%= @ficha.des %>
+    </h1>
     <p>
       <strong>Precio de venta:</strong>
       <%= @ficha.pv %>
@@ -20,7 +19,6 @@
 
 </div>
 
-
-
 <%= link_to 'Edit', edit_ficha_path(@ficha) %> |
 <%= link_to 'Back', fichas_path %>
+<%= link_to 'Back2', session[:return_to] %>

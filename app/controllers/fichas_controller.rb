@@ -10,15 +10,18 @@ class FichasController < ApplicationController
   # GET /fichas/1
   # GET /fichas/1.json
   def show
+    session[:return_to]=URI(request.referer).path
   end
 
   # GET /fichas/new
   def new
     @ficha = Ficha.new
+    @pts = Pt.all
   end
 
   # GET /fichas/1/edit
   def edit
+    @pts = Pt.all
   end
 
   # POST /fichas
@@ -69,6 +72,6 @@ class FichasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ficha_params
-      params.require(:ficha).permit(:des, :pv, :model3d)
+      params.require(:ficha).permit(:des, :pv, :model3d, :imagen_fn, :pt_ids => [])
     end
 end

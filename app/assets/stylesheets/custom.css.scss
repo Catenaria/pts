@@ -1,17 +1,22 @@
 @import "bootstrap";
 
+$semitrans:  rgba(204, 204, 204, 0.8);
 
 .navbar-default {
   background-color: #3f464c;
   border-color: #e7e7e7;
 }
 
-body {
- 
-}
-
-input {
-  background-color: #4e575e;
+.navbar-inverse {
+  //background-color: #3f464c;
+  //background-color: #ffffff;
+  //opacity: 0.1;
+  background: $semitrans;
+  border-color: #090909;
+  .navbar-nav > li > a {
+    color: black;
+    font-weight:bold;
+  }
 }
 
 canvas {
@@ -20,14 +25,29 @@ opacity:1;
 background: red;
 }
 
-.foto {
-  background-color: #303030;
+.fotos {
   color: #fafafa;
-  margin: 3px;
+  margin: 1px;
+  padding: 0px;
+  border-color: #000000;
+  border-style:solid;
+  border-width:1px;
+  background: rgba(204, 204, 204, 0.4);
+  color: black;
 }
 
 a {
-  color: #e30613;
+  color: black;
+}
+
+.model-6 {
+  width:99%;
+  height:25vh;
+}
+
+.model-full {
+  width:99%;
+  height:80vh;
 }
 
 /* Sticky footer styles
@@ -35,14 +55,22 @@ a {
 html {
   position: relative;
   min-height: 100%;
+  
+  
 }
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   font-family: 'Roboto', sans-serif; 
   font-weight: 100; 
-  background-color: #3f464c;
+  background: image-url('fondo1.png') no-repeat center center fixed;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  background-size: cover;
+  //background-color: #3f464c;
   color: #fafafb;
+  // background: rgba(204, 204, 204, 0.1);
 }
 #footer {
   position: absolute;
@@ -72,3 +100,4 @@ body > .container {
 code {
   font-size: 80%;
 }
+
