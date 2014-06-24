@@ -2,12 +2,12 @@
   <div class="row">
     <% n=0 %>
     <% @pts.each do |pt| %>
-    <% if n%6 == 0 then %>
+    <% if n%4 == 0 then %>
   </div>
   <div class="row">
     <% end %>
     <% n+=1 %>
-    <div class="col-xs-6 col-sm-4 col-md-2">
+    <div class="col-xs-6 col-sm-4 col-md-3">
       <div class="fotos">
       <%= link_to(pt) do %>
         <%= image_tag pt.imagen_fn, class:"img-responsive foto" %>
