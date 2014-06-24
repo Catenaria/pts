@@ -12,10 +12,10 @@
           <div class="col-xs-5">
             <p class="text-right"> </p>
           </div>
-          <div class="col-xs-4">
+          <div class="col-xs-2">
             <p class="text-right"> </p>
           </div>
-          <div class="col-xs-3">
+          <div class="col-xs-5">
             <p class="text-right">Precio</p>
           </div>
         </div>
@@ -26,20 +26,22 @@
                 <%= image_tag ficha.imagen_fn, class:"img-responsive" %>
                 <% end %>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-2">
               <p class="text-right"></p>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-5">
               <p class="text-right"><small><%= ficha.pv %></small></p>
             </div>
           </div>
         <% end %>
         <div class="row">
-          <div class="col-xs-9">
+          <div class="col-xs-7">
             <p class="text-right">Total:</p>
           </div>
-          <div class="col-xs-3">
-            <%= @pt.pv %>
+          <div class="col-xs-5">
+            <p class="text-right">
+              <%= @pt.pv %>
+            </p>
           </div>
         </div>
       <% end %>
