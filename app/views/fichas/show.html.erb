@@ -16,9 +16,12 @@
       <%= @ficha.pv %>
     </p>
   </div>
-
 </div>
 
-<%= link_to 'Edit', edit_ficha_path(@ficha) %> |
-<%= link_to 'Back', fichas_path %>
-<%= link_to 'Back2', session[:return_to] %>
+<%= link_to(edit_pt_path(@ficha)) do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+<% end %>
+
+  <%= link_to(:back) do %>
+    <span class="glyphicon glyphicon-arrow-left"></span>
+  <% end %>

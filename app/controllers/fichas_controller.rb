@@ -10,7 +10,6 @@ class FichasController < ApplicationController
   # GET /fichas/1
   # GET /fichas/1.json
   def show
-    session[:return_to]=URI(request.referer).path
   end
 
   # GET /fichas/new

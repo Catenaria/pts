@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+
+# gem 'softcover'
