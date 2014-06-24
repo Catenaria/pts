@@ -10,6 +10,16 @@ class PtsController < ApplicationController
   # GET /pts/1
   # GET /pts/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf do
+        pdf = PtPdf.new(@pt)
+        send_data pdf.render, filename: "pt_#{@pt.id}.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+      end
+    end
   end
 
   # GET /pts/new
